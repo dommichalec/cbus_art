@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  medium: MyString
+  size: MyString
+  rental_price_per_day: 9.99
+  rental_price_per_week: 9.99
+  rental_price_per_month: 9.99
+  sale_price: 9.99
+  available?: false
+  sold?: false
+
+two:
+  title: MyString
+  description: MyText
+  medium: MyString
+  size: MyString
+  rental_price_per_day: 9.99
+  rental_price_per_week: 9.99
+  rental_price_per_month: 9.99
+  sale_price: 9.99
+  available?: false
+  sold?: false
