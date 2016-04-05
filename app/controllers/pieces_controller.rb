@@ -18,6 +18,21 @@ class PiecesController < ApplicationController
     redirect_to piece_path
   end
 
+  def new
+    @piece = Piece.new
+  end
+
+  def create
+    @piece = Piece.create(piece_params)
+    redirect_to piece_path(@piece.id)
+  end
+
+  def destroy
+    @piece = Piece.find(params[:id])
+    @piece.destroy
+    redirect_to pieces_url
+  end
+
   private
 
   def piece_params
