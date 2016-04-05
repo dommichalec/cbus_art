@@ -2,11 +2,11 @@
 module PiecesHelper
   def availability_status(piece)
     if piece.available && !piece.sold
-      'This piece is available for both rental and purchase.'
+      'Available for both rental and purchase.'
     elsif !piece.available && !piece.sold
-      'This piece is currently unavailable.'
+      'Unavailable at the moment'
     else
-      'This piece has been sold.'
+      'Sold'
     end
   end
 end

@@ -1,6 +1,6 @@
 <h1>We found <%= pluralize(@pieces.size, 'piece') %> for you to check out today: </h1>
 <% @pieces.each do |p| %>
-  <h1><%= link_to(p.title, piece_path(p.id)) %></h1>
+  <h1><em><%= link_to(p.title, piece_path(p.id)) %></em></h1>
   <h3><em><%= p.medium %></em></h3>
   <p><em><%= p.description %></em></p>
   <p><em><%= p.size %></em></p>
