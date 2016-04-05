@@ -1,0 +1,10 @@
+<h1>We have <%= pluralize(@pieces.size, 'piece') %> available for you today</h1>
+<% @pieces.each do |p| %>
+  <h1><%= p.title %></h1>
+  <h3><em><%= p.medium %></em></h3>
+  <p><em><%= p.description %></em></p>
+  <p><em><%= p.size %></em></p>
+  <p><em><%= p.rental_price_per_day %> per day / <%= p.rental_price_per_week %> per week / <%= p.rental_price_per_month %> per month</em></p>
+  <p><em>Sale price: <%= p.sale_price %></p></em>
+  <h4>Updated on <%= p.updated_at %></h4>
+<% end %>
