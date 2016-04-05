@@ -6,6 +6,6 @@
 <p><em>Sale price: <%= number_to_currency(@piece.sale_price) %></p></em>
 <p><em>Status: <%= availability_status(@piece) %></em</p>
 <h4>Updated <%= time_ago_in_words(@piece.updated_at) %> ago</h4>
-<%= link_to("Edit me", edit_piece_path(@piece.id)) %> |
-<%= link_to "Remove from site", @piece, method: :delete, data: { confirm: "Removing #{@piece.title} is a permanent action. Are you sure?" } %>
+<%= link_to("Edit #{@piece.title}", edit_piece_path(@piece.id)) %> |
+<%= link_to "Remove #{@piece.title} from #{$SITE_NAME}", piece_path(@piece.id), method: :delete, data: { confirm: "Removing #{@piece.title} is a permanent action. Are you sure?" } %>
 <%= link_to("Go back", pieces_path) %>

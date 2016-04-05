@@ -1,7 +1,7 @@
 # pieces controller
 class PiecesController < ApplicationController
   def index
-    @pieces = Piece.all
+    @pieces = Piece.order_by_last_updated
   end
 
   def show
@@ -15,7 +15,11 @@ class PiecesController < ApplicationController
   def update
     @piece = Piece.find(params[:id])
     @piece.update(piece_params)
-    redirect_to piece_path
+    if @piece.save
+      redirect_to piece_path(@piece.id)
+    else
+      render :edit
+    end
   end
 
   def new
@@ -24,7 +28,10 @@ class PiecesController < ApplicationController
 
   def create
     @piece = Piece.create(piece_params)
-    redirect_to piece_path(@piece.id)
+    if @piece.save
+      redirect_to piece_path(@piece.id)
+    else render :new
+    end
   end
 
   def destroy
