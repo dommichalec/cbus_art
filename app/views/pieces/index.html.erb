@@ -1,11 +1,11 @@
-<h1>We have <%= pluralize(@pieces.size, 'piece') %> available for you today</h1>
+<h1>We currently have <%= pluralize(@pieces.size, 'piece') %> available for you</h1>
 <% @pieces.each do |p| %>
-  <h1><%= p.title %></h1>
+  <h1><%= link_to(p.title, piece_path(p.id)) %></h1>
   <h3><em><%= p.medium %></em></h3>
   <p><em><%= p.description %></em></p>
   <p><em><%= p.size %></em></p>
   <p><em><%= number_to_currency(p.rental_price_per_day) %> per day / <%= number_to_currency(p.rental_price_per_week) %> per week / <%= number_to_currency(p.rental_price_per_month) %> per month</em></p>
-  <p><em>Sale price: <%= p.sale_price %></p></em>
+  <p><em>Sale price: <%= number_to_currency(p.sale_price) %></p></em>
   <p><em>Status: <%= availability_status(p) %></em</p>
   <h4>Updated <%= time_ago_in_words(p.updated_at) %> ago</h4>
 <% end %>

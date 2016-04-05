@@ -10,8 +10,8 @@ class CreatePieces < ActiveRecord::Migration
       t.decimal :rental_price_per_week
       t.decimal :rental_price_per_month
       t.decimal :sale_price
-      t.boolean :available?
-      t.boolean :sold?
+      t.boolean :available
+      t.boolean :sold
 
       t.timestamps null: false
     end

@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 20160405005546) do
     t.decimal  "rental_price_per_week"
     t.decimal  "rental_price_per_month"
     t.decimal  "sale_price"
-    t.boolean  "available?"
-    t.boolean  "sold?"
+    t.boolean  "available"
+    t.boolean  "sold"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
