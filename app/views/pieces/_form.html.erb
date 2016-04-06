@@ -1,4 +1,5 @@
 <%= form_for(@piece) do |f| %>
+  <%= render 'shared/errors' %>
   <h3><%= f.label :title %></h3>
   <%= f.text_field :title %><br>
 
@@ -6,7 +7,7 @@
   <%= f.text_field :medium %><br>
 
   <p><%= f.label :description %></p>
-  <%= f.text_area :description %><br>
+  <%= f.text_area :description, placeholder: 'Keep it simple, but significant. Less than 500 characters.' %><br>
 
   <p><%= f.label :size %></p>
   <%= f.text_field :size %><br>

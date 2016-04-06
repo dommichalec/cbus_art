@@ -1,4 +1,4 @@
 # application helper module
 module ApplicationHelper
-  $SITE_NAME = "Arch City Art"
+  $SITE_NAME = 'Arch City Art'
 end
