@@ -16,6 +16,7 @@ class PiecesController < ApplicationController
     @piece = Piece.find(params[:id])
     @piece.update(piece_params)
     if @piece.save
+      flash[:notice] = "#{@piece.title} has been successfully updated"
       redirect_to piece_path(@piece.id)
     else
       render :edit
@@ -30,14 +31,16 @@ class PiecesController < ApplicationController
     @piece = Piece.create(piece_params)
     if @piece.save
       redirect_to piece_path(@piece.id)
+      flash[:notice] = "#{@piece.title} has been successfully added to the #{$SITE_NAME} gallery"
     else render :new
     end
   end
 
   def destroy
     @piece = Piece.find(params[:id])
+    title = @piece.title
     @piece.destroy
-    redirect_to pieces_url
+    redirect_to pieces_url, notice: "#{title} was successfully removed from the #{$SITE_NAME} gallery"
   end
 
   private
