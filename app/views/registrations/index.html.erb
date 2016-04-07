@@ -1,8 +1,7 @@
 <h1>Registrations for <%= link_to(@piece.title, piece_path(@piece.id)) %></h1>
 
 <% @piece.registrations.each do |r| %>
-  <h4><%= r.name %> said: </h4>
-  <p><%= r.message %>
-    <em><strong>(<%= time_ago_in_words(r.created_at) %> ago)</strong></em>
-  </p>
+  <h4><%= r.name %> from <%= r.neighborhood %> said: </h4>
+  <p><em>"<%= r.message %>"</em></p>
+    <strong>(sent <%= time_ago_in_words(r.created_at) %> ago)</strong>
 <% end %>
