@@ -8,7 +8,14 @@ class Piece < ActiveRecord::Base
   validates :rental_price_per_day, :rental_price_per_week, :rental_price_per_month, :sale_price, numericality: { greater_than_or_equal_to: 0 }
 
   # piece class methods
-  def self.order_by_last_updated
-    order('updated_at desc')
+
+  # Piece#order_by takes a parameter and orders pieces based on that parameter
+  # defaults to ordering by last_updated if unknown parameter is passed in.
+  def self.order_by(command)
+    case command
+    when 'last_updated' then order('updated_at desc')
+    when 'last_added' then order('created_at desc')
+    else order('updated_at desc')
+    end
   end
 end

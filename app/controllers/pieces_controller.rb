@@ -1,7 +1,7 @@
 # pieces controller
 class PiecesController < ApplicationController
   def index
-    @pieces = Piece.order_by_last_updated
+    @pieces = Piece.order_by('last_updated')
   end
 
   def show
