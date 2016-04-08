@@ -10,7 +10,7 @@
   <%= f.text_area :description, placeholder: 'Keep it simple, but significant. Less than 500 characters.' %><br>
 
   <p><%= f.label :size %></p>
-  <%= f.text_field :size %><br>
+  <%= f.text_field :size, placeholder: '16in x 24in' %><br>
 
   <p><%= f.label :rental_price_per_day %></p>
   <%= f.number_field :rental_price_per_day %><br>
@@ -25,7 +25,7 @@
   <%= f.number_field :sale_price %><br>
 
   <h4>Quick heads up: make sure both boxes below are not checked at the same time.</h4>
-  <p><%= f.label "Mark piece as available: " %><%= f.check_box :available? %></p>
+  <p><%= f.label "Mark piece as available on #{$SITE_NAME}: " %><%= f.check_box :available? %></p>
   <p><%= f.label "Mark piece as sold: " %>  <%= f.check_box :sold? %></p>
 
   <%= f.submit %>

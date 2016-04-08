@@ -1,4 +1,4 @@
-<h1>New registration for <%= @piece.title %></h1>
+<h1>Your registration for <%= @piece.title %></h1>
 <%= render 'shared/errors', object: @registration %>
 <%= form_for([@piece, @registration]) do |f| %>
 <h3><%= f.label :name %></h3>
@@ -7,16 +7,16 @@
 <h3><%= f.label :email %></h3>
 <%= f.text_field :email %><br>
 
-<p><%= f.label :phone_number %></p>
+<h3><%= f.label :phone_number %> <em> (just the numbers will do the trick)</em></h3>
 <%= f.number_field :phone_number, placeholder: '1234567890' %><br>
 
-<p><%= f.label :message %></p>
+<h3><%= f.label :message %></h3>
 <%= f.text_area :message %><br>
 
-<p><%= f.label :neighborhood, "Which neighborhood do you live in?" %></p>
+<h3><%= f.label :neighborhood, "Which neighborhood do you live in?" %></h3>
 <%= f.text_field :neighborhood, placeholder: "Short North, Worthington etc." %><br>
 
-<p><%= f.label :zip_code %></p>
+<h3><%= f.label :zip_code %></h3>
 <%= f.number_field :zip_code, placeholder: '43202' %><br>
 
 <p><%= f.label "Interested in renting this piece? " %><%= f.check_box :interested_in_rental %></p>

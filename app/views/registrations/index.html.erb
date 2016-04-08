@@ -3,7 +3,7 @@
 <% @piece.registrations.each do |r| %>
   <h4><%= mail_to(r.email, r.name) %> from <%= r.neighborhood %> (<%= r.zip_code %>) said: </h4>
   <p><em>"<%= r.message %>"</em></p>
-  <p><em><%= r.name %> can also be reached at <%= r.phone_number %></p></em>
+  <p><em><strong>Note: </strong><%= r.name %> can also be reached at <%= r.phone_number %></p></em>
     <strong>(sent <%= time_ago_in_words(r.created_at) %> ago)</strong>
   <p><em><%= link_to "Remove #{r.name}'s request", piece_registration_path(@piece, r.id), method: :delete, data: { confirm: "Removing #{r.name}'s request is permanent. Please make sure to get in touch with this patron before deleting their request." } %><br>
 </p></em>
