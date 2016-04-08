@@ -17,7 +17,7 @@
 <p><em>Status: <%= availability_status(@piece) %></em</p>
 
 <h4>Updated <%= time_ago_in_words(@piece.updated_at) %> ago</h4>
-
-<%= link_to("Edit #{@piece.title}", edit_piece_path(@piece.id)) %><br>
+<%= link_to("Register to rent or purchase #{@piece.title}", new_piece_registration_path(@piece.id)) %><br>
+<%= link_to("Edit #{@piece.title}'s status", edit_piece_path(@piece.id)) %><br>
 <%= link_to "Remove #{@piece.title} from #{$SITE_NAME}", piece_path(@piece.id), method: :delete, data: { confirm: "Removing '#{@piece.title}' is permanent. Please click 'OK' to confirm removal or 'Cancel' to go back." } %><br>
 <%= link_to("Go back", pieces_path) %>
