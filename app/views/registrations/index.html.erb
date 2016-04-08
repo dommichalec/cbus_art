@@ -1,7 +1,9 @@
 <h1>Registrations for <%= link_to(@piece.title, piece_path(@piece.id)) %></h1>
 
 <% @piece.registrations.each do |r| %>
-  <h4><%= r.name %> from <%= r.neighborhood %> said: </h4>
+  <h4><%= mail_to(r.email, r.name) %> (<%= r.area_code %>)-<%= r.phone_number %> from <%= r.neighborhood %> said: </h4>
   <p><em>"<%= r.message %>"</em></p>
     <strong>(sent <%= time_ago_in_words(r.created_at) %> ago)</strong>
+  <p><em><%= link_to "Remove #{r.name}'s request", piece_registration_path(@piece, r.id), method: :delete, data: { confirm: "Removing #{r.name}'s request is permanent. Please make sure to get in touch before removing this request." } %><br>
+</p></em>
 <% end %>
