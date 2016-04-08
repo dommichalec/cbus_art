@@ -1,5 +1,5 @@
 <%= form_for(@piece) do |f| %>
-  <%= render 'shared/errors' %>
+  <%= render 'shared/errors', object: @piece %>
   <h3><%= f.label :title %></h3>
   <%= f.text_field :title %><br>
 
