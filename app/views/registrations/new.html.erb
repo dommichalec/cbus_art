@@ -7,17 +7,17 @@
 <h3><%= f.label :email %></h3>
 <%= f.text_field :email %><br>
 
-<p><%= f.label :area_code %></p>
-<%= f.number_field :area_code %><br>
-
 <p><%= f.label :phone_number %></p>
-<%= f.number_field :phone_number %><br>
+<%= f.number_field :phone_number, placeholder: '1234567890' %><br>
 
 <p><%= f.label :message %></p>
 <%= f.text_area :message %><br>
 
 <p><%= f.label :neighborhood, "Which neighborhood do you live in?" %></p>
 <%= f.text_field :neighborhood, placeholder: "Short North, Worthington etc." %><br>
+
+<p><%= f.label :zip_code %></p>
+<%= f.number_field :zip_code, placeholder: '43202' %><br>
 
 <p><%= f.label "Interested in renting this piece? " %><%= f.check_box :interested_in_rental %></p>
 <p><%= f.label "Interested in purchasing this piece? " %>  <%= f.check_box :interested_in_purchase %></p>

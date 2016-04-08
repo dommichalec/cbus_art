@@ -3,8 +3,7 @@ class CreateRegistrations < ActiveRecord::Migration
     create_table :registrations do |t|
       t.string :name
       t.string :email
-      t.integer :area_code
-      t.integer :phone_number
+      t.integer :phone_number, :limit => 10
       t.text :message
       t.boolean :interested_in_rental
       t.boolean :interested_in_purchase
