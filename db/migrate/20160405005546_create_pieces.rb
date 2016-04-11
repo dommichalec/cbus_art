@@ -12,6 +12,7 @@ class CreatePieces < ActiveRecord::Migration
       t.decimal :sale_price
       t.boolean :available
       t.boolean :sold
+      t.references :city, index: true, foreign_key: true
 
       t.timestamps null: false
     end

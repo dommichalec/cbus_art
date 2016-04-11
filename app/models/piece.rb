@@ -20,4 +20,5 @@ class Piece < ActiveRecord::Base
   end
 
   has_many :registrations, dependent: :destroy
+  belongs_to :city
 end
