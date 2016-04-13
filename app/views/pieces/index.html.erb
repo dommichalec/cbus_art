@@ -8,4 +8,5 @@
   <p><em><%= number_to_currency(p.rental_price_per_day) %> per day / <%= number_to_currency(p.rental_price_per_week) %> per week / <%= number_to_currency(p.rental_price_per_month) %> per month</em></p>
   <p><em>Sale price: <%= number_to_currency(p.sale_price) %></p></em>
   <p><em>Status: <%= availability_status(p) %></em</p><br>
+  <h4><em>Updated <%= time_ago_in_words(p.updated_at) %> ago</em></h4>
 <% end %>

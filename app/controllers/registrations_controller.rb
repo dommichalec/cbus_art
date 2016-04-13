@@ -29,7 +29,7 @@ class RegistrationsController < ApplicationController
   private
 
   def registration_params
-    params.require(:registration).permit(:name, :email, :phone_number, :message, :interested_in_rental, :interested_in_purchase, :neighborhood, :zip_code)
+    params.require(:registration).permit(:name, :email, :phone_number, :message, :interested_in_rental, :interested_in_purchase, :neighborhood, :zip_code, :organization)
   end
 
   def set_piece

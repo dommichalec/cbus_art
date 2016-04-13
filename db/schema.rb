@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160413174407) do
+ActiveRecord::Schema.define(version: 20160413201518) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20160413174407) do
     t.datetime "updated_at",                        null: false
     t.string   "neighborhood"
     t.integer  "zip_code"
+    t.string   "organization"
   end
 
   add_index "registrations", ["piece_id"], name: "index_registrations_on_piece_id"

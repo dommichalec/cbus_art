@@ -1,26 +1,35 @@
-<h1>Registration form for <em><%= @piece.title %></em></h1>
-<%= render 'shared/errors', object: @registration %>
-<%= form_for([@piece, @registration]) do |f| %>
-<h3><%= f.label :name %></h3>
-<%= f.text_field :name %><br>
+<% if @piece.sold == false  %>
+  <h1>Registration form for <em><%= @piece.title %></em></h1>
+  <%= image_tag @piece.picture.url(:thumb) %>
+  <%= render 'shared/errors', object: @registration %>
+  <%= form_for([@piece, @registration]) do |f| %>
+  <h3><%= f.label :name %></h3>
+  <%= f.text_field :name %><br>
 
-<h3><%= f.label :email %></h3>
-<%= f.text_field :email %><br>
+  <h3><%= f.label :email %></h3>
+  <%= f.text_field :email %><br>
 
-<h3><%= f.label :phone_number %> <em> (just the numbers will do the trick)</em></h3>
-<%= f.number_field :phone_number, placeholder: '1234567890' %><br>
+  <h3><%= f.label :organization %> <em>(if applicable)</em></h3>
+  <%= f.text_field :organization %><br>
 
-<h3><%= f.label :message %></h3>
-<%= f.text_area :message %><br>
+  <h3><%= f.label :phone_number %> <em> (just the numbers will do the trick)</em></h3>
+  <%= f.number_field :phone_number, placeholder: '1234567890' %><br>
 
-<h3><%= f.label :neighborhood, "Which neighborhood do you live in?" %></h3>
-<%= f.text_field :neighborhood, placeholder: "Short North, Worthington etc." %><br>
+  <h3><%= f.label :message %></h3>
+  <%= f.text_area :message %><br>
 
-<h3><%= f.label :zip_code %></h3>
-<%= f.number_field :zip_code, placeholder: '43202' %><br>
+  <h3><%= f.label :neighborhood, "Which neighborhood do you live in?" %></h3>
+  <%= f.text_field :neighborhood, placeholder: "Short North, Worthington etc." %><br>
 
-<p><%= f.label "Interested in renting this piece? " %><%= f.check_box :interested_in_rental %></p>
-<p><%= f.label "Interested in purchasing this piece? " %>  <%= f.check_box :interested_in_purchase %></p>
+  <h3><%= f.label :zip_code %></h3>
+  <%= f.number_field :zip_code, placeholder: '43202' %><br>
 
-<%= f.submit %>
+  <p><%= f.label "Interested in renting this piece? " %><%= f.check_box :interested_in_rental %></p>
+  <p><%= f.label "Interested in purchasing this piece? " %>  <%= f.check_box :interested_in_purchase %></p>
+
+  <%= f.submit %> or <%= link_to("Go back", piece_path(@piece.id)) %>
+  <% end %>
+<% else %>
+  <h3>The piece you're looking for has been sold</h3>
+  <%= image_tag @piece.picture.url(:thumb) %>
 <% end %>
