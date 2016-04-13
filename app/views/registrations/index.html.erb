@@ -7,5 +7,7 @@
     <p><em><%= r.name %> can also be reached at <%= r.phone_number %></p></em>
     <strong>(sent <%= time_ago_in_words(r.created_at) %> ago)</strong>
   <p><em><%= link_to "Remove #{r.name}'s request", piece_registration_path(@piece, r.id), method: :delete, data: { confirm: "Removing #{r.name}'s request is permanent. Please make sure to get in touch with this patron before deleting their request." } %><br>
-</p></em>
+</p></em><br>
 <% end %>
+
+<h3><%= link_to("Sample Artist/Patron Leasing Agreement", "https://docs.google.com/document/d/15DG8e3j7TyPFAk-gfRFYid0y7mFPM4tIyw2f6w31TCc/edit?usp=sharing", target: '_blank') %></h3>
