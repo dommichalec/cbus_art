@@ -1,5 +1,6 @@
 class Registration < ActiveRecord::Base
   before_save { |registration| registration.email = registration.email.downcase }
+  before_save { |registration| registration.name = registration.name.strip }
   belongs_to :piece
 
   validates :name, length: { within: 1..25 }

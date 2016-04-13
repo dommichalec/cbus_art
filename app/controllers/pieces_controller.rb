@@ -46,6 +46,6 @@ class PiecesController < ApplicationController
   private
 
   def piece_params
-    params.require(:piece).permit(:title, :description, :medium, :size, :rental_price_per_day, :rental_price_per_week, :rental_price_per_month, :sale_price, :available, :sold)
+    params.require(:piece).permit(:title, :description, :medium, :size, :rental_price_per_day, :rental_price_per_week, :rental_price_per_month, :sale_price, :available, :sold, :picture)
   end
 end

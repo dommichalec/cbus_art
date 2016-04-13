@@ -6,23 +6,26 @@
   <h3><%= f.label :medium %></h3>
   <%= f.text_field :medium %><br>
 
-  <p><%= f.label :description %></p>
+  <h3><%= f.label :description %></h3>
   <%= f.text_area :description, placeholder: 'Keep it simple, but significant. Less than 500 characters.' %><br>
 
-  <p><%= f.label :size %></p>
+  <h3><%= f.label :size %></h3>
   <%= f.text_field :size, placeholder: '16in x 24in' %><br>
 
-  <p><%= f.label :rental_price_per_day %></p>
+  <h3><%= f.label :rental_price_per_day %></h3>
   <%= f.number_field :rental_price_per_day %><br>
 
-  <p><%= f.label :rental_price_per_week %></p>
+  <h3><%= f.label :rental_price_per_week %></h3>
   <%= f.number_field :rental_price_per_week %><br>
 
-  <p><%= f.label :rental_price_per_month %></p>
+  <h3><%= f.label :rental_price_per_month %></h3>
   <%= f.number_field :rental_price_per_month %><br>
 
-  <p><%= f.label :sale_price %></p>
+  <h3><%= f.label :sale_price %></p>
   <%= f.number_field :sale_price %><br>
+
+  <h3><%= f.label :picture %></h3>
+  <%= f.file_field :picture %>
 
   <h4>Quick heads up: make sure both boxes below are not checked at the same time.</h4>
   <p><%= f.label "Mark piece as available: " %><%= f.check_box :available? %></p>
