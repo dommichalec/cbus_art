@@ -1,4 +1,4 @@
-<h1>Your registration for <%= @piece.title %></h1>
+<h1>Registration form for <em><%= @piece.title %></em></h1>
 <%= render 'shared/errors', object: @registration %>
 <%= form_for([@piece, @registration]) do |f| %>
 <h3><%= f.label :name %></h3>

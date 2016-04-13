@@ -12,7 +12,7 @@ class RegistrationsController < ApplicationController
   def create
     @registration = @piece.registrations.new(registration_params)
     if @registration.save
-      flash[:notice] = "Your registration for #{@piece.title} has been sent!"
+      flash[:notice] = "Your registration for #{@piece.title} has been sent to the artist!"
       redirect_to piece_path(@piece.id)
     else
       render :new
