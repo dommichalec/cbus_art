@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all.shuffle # displays all members randomly
+    @users = User.all
   end
 
   def show
