@@ -1,0 +1,2 @@
+<h1><%= @user.first_name %> <%= @user.last_name %>'s profile</h1>
+<%= link_to "Delete your #{$SITE_NAME} account", user_path(@user.id), method: :delete, data: { confirm: "Deleting your account is permanent. Please click 'OK' to confirm removal or 'Cancel' to go back" } %>
