@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ArtCbus</title>
+  <title><%= "#{$SITE_NAME}" %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,7 +9,15 @@
 <body>
 
 <div class='container'>
-  <p><%= link_to("Home", root_path) %> | <%= link_to("About", about_path) %> | <%= link_to("Contact", contact_path) %></p>
+  <p><%= link_to("Home", root_path) %>
+    | <%= link_to("About", about_path) %>
+    | <%= link_to("Contact", contact_path) %>
+    <% if current_user %>
+    | <%= link_to("Logout", session_path, method: :delete) %>
+    | <%= link_to "Your dashboard", current_user %></p>
+    <% else %>
+    | <%= link_to("Artist Log In", new_session_path) %></p>
+    <% end %>
   <%= render 'shared/flashes' %>
   <%= yield %>
 </div>

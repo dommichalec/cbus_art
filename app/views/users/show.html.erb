@@ -1,2 +1,4 @@
-<h1><%= @user.first_name %> <%= @user.last_name %>'s profile</h1>
+<h1><%= "#{@user.first_name}'s dashboard as of today at" %> <%= "#{Time.now.strftime("%I:%M %p")}" %></h1>
+<h3><%= link_to("Add a piece to the gallery", new_piece_path) %></h3>
+<h3><%= link_to("Edit your account", edit_user_path) %></h3>
 <%= link_to "Delete your #{$SITE_NAME} account", user_path(@user.id), method: :delete, data: { confirm: "Deleting your account is permanent. Please click 'OK' to confirm removal or 'Cancel' to go back" } %>

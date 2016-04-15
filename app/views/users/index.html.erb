@@ -1,4 +1,4 @@
-<h1>Featuring your <%= "#{$SITE_NAME}" %> member artists</h1>
+<h1>Your <%= "#{$SITE_NAME}" %> member artists</h1>
 <% @users.shuffle.each do |u| %>
   <h2><%= u.first_name %> <%= u.last_name %></h2>
   <p><em>Member since <%= membership_created_on(u) %></em></p>

@@ -9,7 +9,7 @@
   <h3><%= f.label :email %></h3>
   <%= f.text_field :email %><br>
 
-  <h3><%= f.label :organization %> <em>(if applicable)</em></h3>
+  <h3><%= f.label :company_or_organization %> <em>(if applicable)</em></h3>
   <%= f.text_field :organization %><br>
 
   <h3><%= f.label :phone_number %> <em> (just the numbers will do the trick)</em></h3>
@@ -18,7 +18,7 @@
   <h3><%= f.label :message %></h3>
   <%= f.text_area :message %><br>
 
-  <h3><%= f.label :neighborhood, "Which neighborhood do you live in?" %></h3>
+  <h3><%= f.label :neighborhood, "Which neighborhood are you located in?" %></h3>
   <%= f.text_field :neighborhood, placeholder: "Short North, Worthington etc." %><br>
 
   <h3><%= f.label :zip_code %></h3>

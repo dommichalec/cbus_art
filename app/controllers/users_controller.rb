@@ -14,6 +14,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      # uncomment below if you want users signed in upon account creation
+      # session[:user_id] = @user.id
       redirect_to root_path, notice: "Your account was successfully created!"
     else
       render :new
@@ -38,6 +40,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     first_name = @user.first_name
     @user.destroy
+    session[:user_id] = nil
     redirect_to root_path, notice: "We're sorry to see you go, #{first_name}! If you need anything from us again don't hesitate to reach out :)"
   end
 

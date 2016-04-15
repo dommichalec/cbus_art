@@ -1,12 +1,13 @@
 <h1>Registrations for <%= link_to(@piece.title, piece_path(@piece.id)) %></h1>
+<p><em>ordered by first submission to last</em></p>
 
 <% @piece.registrations.each do |r| %>
   <br><h4><%= mail_to(r.email, r.name) %> from <%= r.neighborhood %> (<%= r.zip_code %>) said: </h4>
-  <p><em><%= r.message.empty? ? "#{r.name} didn't leave a note." : "\"#{r.message}\"" %></em></p>
+  <p><em><%= r.message.empty? ? "#{r.name} didn't leave a note with their registration." : "\"#{r.message}\"" %></em></p>
   <p><em><strong>Notes: </strong><%= rental_or_purchase_for(r) %></em></p>
   <p><em><%= r.name %> can also be reached at <%= r.phone_number %></p></em>
   <strong>(sent <%= time_ago_in_words(r.created_at) %> ago)</strong>
-  <p><em><%= link_to "Remove #{r.name}'s request", piece_registration_path(@piece, r.id), method: :delete, data: { confirm: "Removing #{r.name}'s request is permanent. Please make sure to get in touch with this patron before deleting their request." } %><br>
+  <p><em><%= link_to "Remove #{r.name}'s request", piece_registration_path(@piece, r.id), method: :delete, data: { confirm: "Removing #{r.name}'s request is permanent. Please make sure to get in touch with this patron before clicking 'OK' to delete their request." } %><br>
 </p></em>
 <% end %>
 

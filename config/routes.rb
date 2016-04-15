@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  resource :session
   resources :users
-  resources :cities
   resources :pieces do
     resources :registrations
   end

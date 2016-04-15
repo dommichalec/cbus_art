@@ -1,5 +1,4 @@
 <h1>We found <%= pluralize(@pieces.size, 'piece') %> for you to check out today: </h1>
-<h3><%= link_to("Add a piece to your online gallery", new_piece_path) %></h3>
 <% @pieces.each do |p| %><br>
   <h1><em><%= link_to(p.title, piece_path(p.id)) %></em> (<em><%= p.medium %></em>)</h1>
   <%= image_tag p.picture.url(:thumb) %>
