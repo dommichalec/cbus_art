@@ -6,7 +6,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem "paperclip", "~> 5.0.0.beta1"
-gem 'rmagick', '~> 2.15', '>= 2.15.4'
+gem 'rmagick', '~> 5.3', '>= 5.3.0'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
